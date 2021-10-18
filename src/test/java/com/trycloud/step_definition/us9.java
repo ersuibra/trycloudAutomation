@@ -4,28 +4,23 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class us9 {
-    @When("click Settings on the left bottom corner")
-    public void click_settings_on_the_left_bottom_corner() {
+    @When("click details")
+    public void click_details() {
 
     }
 
-    @Then("verify user can click any buttons.")
-    public void verify_user_can_click_any_buttons() {
+    @When("write a comment inside to the input box")
+    public void write_a_comment_inside_to_the_input_box() {
 
     }
 
-    @When("check the current storage usage")
-    public void check_the_current_storage_usage() {
+    @When("click the submit button to post it")
+    public void click_the_submit_button_to_post_it() {
 
     }
 
-    @When("refresh the page")
-    public void refresh_the_page() {
-
-    }
-
-    @Then("verify the storage usage is increased")
-    public void verify_the_storage_usage_is_increased() {
+    @Then("verify the comment is displayed in the comment section.")
+    public void verify_the_comment_is_displayed_in_the_comment_section() {
 
     }
 
