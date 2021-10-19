@@ -1,5 +1,6 @@
 @ui @us1
 Feature: As a user, I should be able to login.
+
   Background:
     Given user on the login page
 
@@ -19,8 +20,9 @@ Feature: As a user, I should be able to login.
     Then verify user launched to the dashboard
 
     Examples:
-      | username|password|
-      | user1 | Userpass123 |
-      | user31| Userpass123 |
-      | user61| Userpass123 |
-      | user91| Userpass123 |
+      | username | password    |
+      | user1    | Userpass123 |
+      | user31   | Userpass123 |
+      | user61   | Userpass123 |
+      | user91   | Userpass123 |
+
