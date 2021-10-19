@@ -10,7 +10,7 @@ Feature: As a user, I should be able to login.
 
   Scenario: verify user login fail with invalid credentials
     When user enter invalid credentials
-    And click login button
+    And user click login button
     Then “Wrong username or password.” message should be displayed
 
   Scenario Outline: Login with valid credentials
