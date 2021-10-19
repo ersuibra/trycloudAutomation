@@ -1,4 +1,4 @@
-@ui
+@ui @us1
 Feature: As a user, I should be able to login.
   Background:
     Given user on the login page
