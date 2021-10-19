@@ -30,11 +30,6 @@ public class us1 {
 
     }
 
-    @When("click login button")
-    public void click_login_button() {
-
-    }
-
     @Then("“Wrong username or password.” message should be displayed")
     public void wrong_username_or_password_message_should_be_displayed() {
 
