@@ -1,4 +1,4 @@
-
+@ui
 Feature: As a user, I should be access all the main modules of the app.
 
   Scenario Outline: verify users access to the main modules
