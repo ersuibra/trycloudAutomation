@@ -1,3 +1,4 @@
+@ui @us13
 Feature: As a user, I should be able to access to Contacts module.
 
   Scenario: verify users can see all the contact names on the contact list

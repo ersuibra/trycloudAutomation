@@ -41,16 +41,13 @@ public class us1 {
 
     @Then("“Wrong username or password.” message should be displayed")
     public void wrong_username_or_password_message_should_be_displayed() {
-
         Assert.assertEquals("Wrong username or password.", loginPage.errorMessage.getText());
-
     }
 
     @When("user use username {string} and passcode {string}")
     public void user_use_username_and_passcode(String username, String password) {
         loginPage.userName.sendKeys(username);
         loginPage.password.sendKeys(password);
-
     }
 
 

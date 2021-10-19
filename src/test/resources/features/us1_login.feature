@@ -25,3 +25,4 @@ Feature: As a user, I should be able to login.
       | user31   | Userpass123 |
       | user61   | Userpass123 |
       | user91   | Userpass123 |
+
