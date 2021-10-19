@@ -1,3 +1,4 @@
+@ui @us11
 Feature: As a user, I should be able to access to Talks module.
 
   Background:
