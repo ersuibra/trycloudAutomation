@@ -1,4 +1,4 @@
-@ui
+@ui @us6
 Feature: As a user, I should be able to access to Files module.
 
   Background:
