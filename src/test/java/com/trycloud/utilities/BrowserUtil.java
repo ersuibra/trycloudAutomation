@@ -16,14 +16,15 @@ public class BrowserUtil {
     //Performs a pause
     public static void waitFor(int seconds) {
         try {
-            Thread.sleep(seconds*1000);
-        }catch (InterruptedException e){
+            Thread.sleep(seconds * 1000);
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
 
     //Waits for element matching the locator to be visible on the page
-    public static boolean checkVisibilityOfElement(By locator,int seconds ) {
+    public static boolean checkVisibilityOfElement(By locator, int seconds) {
+
         boolean hasLocated = false;
 
         WebDriverWait wait = new WebDriverWait(com.trycloud.utilities.Driver.getDriver(), seconds);
@@ -38,19 +39,20 @@ public class BrowserUtil {
     }
     // return a list of string from a list of elements
 
-    public static List<String> getAllText(List<WebElement> lstOfWebElements ){
+    public static List<String> getAllText(List<WebElement> lstOfWebElements) {
 
         List<String> allTextLst = new ArrayList<>();
         for (WebElement eachElement : lstOfWebElements) {
-            allTextLst.add(  eachElement.getText()  );
+            allTextLst.add(eachElement.getText());
         }
 
-        return  allTextLst ;
+        return allTextLst;
 
     }
 
 
-     // Switches to new window by the exact title. Returns to original window if target title not found
+    // Switches to new window by the exact title. Returns to original window if target title not found
+
     public static void switchToWindow(String targetTitle) {
         String origin = Driver.getDriver().getWindowHandle();
         for (String handle : Driver.getDriver().getWindowHandles()) {
@@ -85,34 +87,48 @@ public class BrowserUtil {
         }
         return true;
     }
+
     //returns random number between a to b (Used for any element situations)
     public static int randomNumber(int a, int b) {
         return new Faker().number().numberBetween(a, b);
     }
 
     //checks if all elements are checked
-    public static boolean getIsCheck(List<WebElement> allCheckboxes,WebElement nextButton){
+    public static boolean getIsCheck(List<WebElement> allCheckboxes) {
+        boolean flag = true;
+        for (WebElement checkbox : allCheckboxes) {
+            if (!checkbox.isSelected()) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
 
-        boolean flag=true;
+    //checks if all elements are checked on Multiple Pages
+    public static boolean getIsCheckMultiplePage(List<WebElement> allCheckboxes, WebElement nextButton) {
 
-        String str="";
+        boolean flag = true;
 
-        do{
+        String str = "";
 
-            str= Driver.getDriver().getCurrentUrl();
+        do {
+
+            str = Driver.getDriver().getCurrentUrl();
 
 
             for (WebElement checkbox : allCheckboxes) {
-                if(!checkbox.isSelected()) {
+                if (!checkbox.isSelected()) {
                     flag = false;
-                    break  ;
+                    break;
                 }
             }
+
 
             nextButton.click();
             BrowserUtil.waitFor(2);
 
-        }while(!Driver.getDriver().getCurrentUrl().equals(str));
+        } while (!Driver.getDriver().getCurrentUrl().equals(str));
 
         return flag;
     }
