@@ -24,6 +24,7 @@ public class BrowserUtil {
 
     //Waits for element matching the locator to be visible on the page
     public static boolean checkVisibilityOfElement(By locator, int seconds) {
+
         boolean hasLocated = false;
 
         WebDriverWait wait = new WebDriverWait(com.trycloud.utilities.Driver.getDriver(), seconds);
@@ -51,6 +52,7 @@ public class BrowserUtil {
 
 
     // Switches to new window by the exact title. Returns to original window if target title not found
+
     public static void switchToWindow(String targetTitle) {
         String origin = Driver.getDriver().getWindowHandle();
         for (String handle : Driver.getDriver().getWindowHandles()) {
