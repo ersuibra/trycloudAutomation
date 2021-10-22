@@ -15,6 +15,7 @@ public class us1 {
     @Given("user on the login page")
     public void user_on_the_login_page() {
         Driver.getDriver().get(ConfigReader.read("url"));
+
     }
 
     @When("user enter valid username and password")
