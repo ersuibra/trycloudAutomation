@@ -6,18 +6,15 @@ import org.junit.runner.RunWith;
 
 
 @RunWith(Cucumber.class)
-
-@CucumberOptions(
-
-        features = "src/test/resources/features",
-        glue = "com/trycloud/step_definitions",
-        publish = false,
-        dryRun = true,
-        plugin = {"pretty", "html:target/cucumber_report1.html"
-                , "rerun:target/rerun.txt", "me.jvt.cucumber.report.PrettyReports:target"
-        }, tags = "@ui"
-        //@wip
-
+@CucumberOptions(  features = "src/test/resources/features" , //alternatively "classpath:features"
+        glue = "com/cydeo/step_definitions" ,
+        publish = true, // it will give you public link of your local html report
+        plugin = {"pretty", "html:target/cucumber.html" ,
+                "rerun:target/rerun.txt" ,  // store the failed scenario into rerun.txt
+                "me.jvt.cucumber.report.PrettyReports:target"  // fancy report
+        } ,
+        dryRun = false
+        ,tags = "@ui" //"@ui and @go_home"    //"@smoke or @salad"
 )
 public class TestRunner {
 //Empty class

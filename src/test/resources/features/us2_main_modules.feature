@@ -1,19 +1,20 @@
-
+@ui
 Feature: As a user, I should be access all the main modules of the app.
 
-  Scenario Outline: verify users access to the main modules
+  Background:
     Given user on the login page
-    When login as a user
-    Then verify that user see the following modules "<modules>"
 
-    Examples:
-      | modules   |
+  Scenario: As a user, I should be access all the main modules of the app.
+    When user  log in with valid credentials
+    Then Verify the user see the following modules:
       | Dashboard |
       | Files     |
       | Photos    |
       | Activity  |
       | Talk      |
+      | Mail      |
       | Contacts  |
       | Circles   |
       | Calendar  |
-      | Desk      |
+      | Deck      |
+      | More      |
