@@ -1,4 +1,4 @@
-@ui
+@us_02
 Feature: As a user, I should be access all the main modules of the app.
 
   Background:
