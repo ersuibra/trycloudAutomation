@@ -12,7 +12,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class RemovingFileFromFavoritesPage {
+public class FavoritesPage {
 
     //instance variables
 
@@ -26,10 +26,10 @@ public class RemovingFileFromFavoritesPage {
 
 
 
-    @FindBy(xpath = "(//ul[@id=\"appmenu\"]/li)[2]")
+    @FindBy(xpath = "//td[@class=\"filename\"]")
     public List<WebElement> favoritesFiles;
 
-    @FindBy(xpath = "(//span[@class=\"icon icon-more\"])[10]")
+    @FindBy(xpath = "(//td[@class=\"filename\"])[1]//a[@class=\"action action-menu permanent\"]")
     public WebElement selectFirstFile;
 
     @FindBy(xpath = "//span[.='Remove from favorites']")
@@ -37,7 +37,7 @@ public class RemovingFileFromFavoritesPage {
 
 
     //constructor
-    public RemovingFileFromFavoritesPage() {
+    public FavoritesPage() {
         PageFactory.initElements(Driver.getDriver(), this);
 
     }
