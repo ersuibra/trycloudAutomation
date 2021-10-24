@@ -1,23 +1,11 @@
 package com.trycloud.step_definition;
 
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 
 public class us13 {
-    @When("click magnifier icon on the right top")
-    public void click_magnifier_icon_on_the_right_top() {
-
+    @Then("verify the contact names are in the list")
+    public void verify_the_contact_names_are_in_the_list() {
+        // Write code here that turns the phrase above into concrete actions
+        throw new io.cucumber.java.PendingException();
     }
-
-    @When("search any existing file,folder,user name")
-    public void search_any_existing_file_folder_user_name() {
-
-    }
-
-    @Then("verify the app displays the expected result option")
-    public void verify_the_app_displays_the_expected_result_option() {
-
-    }
-
-
 }

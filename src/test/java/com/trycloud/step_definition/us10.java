@@ -1,36 +1,50 @@
 package com.trycloud.step_definition;
 
+import com.trycloud.pages.FilesPage;
+import com.trycloud.utilities.BrowserUtil;
+import com.trycloud.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.WebElement;
 
 public class us10 {
-    @When("click Talks module")
-    public void click_talks_module() {
+    FilesPage filesPage = new FilesPage();
+    String storage = filesPage.storageUsage.getText();
+    @When("click Settings on the left bottom corner")
+    public void click_settings_on_the_left_bottom_corner() {
+        filesPage.settingsButton.click();
+    }
+
+    @Then("verify user can click any buttons.")
+    public void verify_user_can_click_any_buttons() {
+        for (WebElement checkBox : filesPage.checkBoxes) {
+            boolean beforeClick = checkBox.isSelected();
+            checkBox.click();
+            boolean afterClick = checkBox.isSelected();
+            Assert.assertNotEquals(!beforeClick, afterClick);
+        }
+    }
+
+    @When("check the current storage usage")
+    public void check_the_current_storage_usage() {
+        storage= storage.substring(0,(storage.indexOf(" ")));
+        System.out.println("Current storage = " + storage);
+    }
+
+    @When("refresh the page")
+    public void refresh_the_page() {
+        Driver.getDriver().navigate().refresh();
 
     }
 
-    @Then("verify the page tile is Talks module’s tile")
-    public void verify_the_page_tile_is_talks_module_s_tile() {
+    @Then("verify the storage usage is increased")
+    public void verify_the_storage_usage_is_increased() {
+        String beforeUpload = storage;
+        BrowserUtil.waitFor(10);
+        String afterUpload = storage;
 
-    }
-
-    @When("search a user from search box on the left")
-    public void search_a_user_from_search_box_on_the_left() {
-
-    }
-
-    @When("write a message")
-    public void write_a_message() {
-
-    }
-
-    @When("click submit button")
-    public void click_submit_button() {
-
-    }
-
-    @Then("verify the message is displayed on the conversation log")
-    public void verify_the_message_is_displayed_on_the_conversation_log() {
+        Assert.assertTrue(Integer.parseInt(beforeUpload)!=Integer.parseInt(afterUpload));
 
     }
 

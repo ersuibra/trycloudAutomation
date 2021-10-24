@@ -1,4 +1,4 @@
-
+@ui @us5
 Feature: As a user, I should be able to access to Files module.
 
   Background:
@@ -11,7 +11,6 @@ Feature: As a user, I should be able to access to Files module.
     Then verify that the file is removed from Favorites sub-module’s table.
 
   Scenario: verify users can upload a file directly to the homepage
-
     When click the “+” icon on top
     And click “upload file"
     And upload a file

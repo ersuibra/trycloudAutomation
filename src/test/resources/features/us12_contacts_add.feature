@@ -1,3 +1,4 @@
+                     @ui @us12
 Feature: As a user, I should be able to access to Contacts module.
 
   Background:
