@@ -23,7 +23,7 @@ public class us2_DashboardStepDef {
 
         List<String> actualModules = BrowserUtil.getElementsText(new DashboardPage().allModuleNames);
 
-        Assert.assertEquals(expectedModules,actualModules );
+        Assert.assertEquals(expectedModules,actualModules);
 
     }
 
