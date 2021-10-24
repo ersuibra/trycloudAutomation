@@ -7,17 +7,17 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
-    @FindBy(xpath = "//input[@id='user']")
-    public WebElement userName;
+    @FindBy(id = "user")
+    public WebElement usernameBox;
 
-    @FindBy(xpath = "//input[@id='password']")
-    public WebElement password;
+    @FindBy(id = "password")
+    public WebElement passwordBox;
 
-    @FindBy(xpath = "//input[@id='submit-form']")
+    @FindBy(id = "submit-form")
     public WebElement loginButton;
 
     @FindBy(xpath = "//p[@class='warning wrongPasswordMsg']")
-    public WebElement errorMessage;
+    public WebElement warningMessage;
 
     @FindBy(xpath = "//div[@id='settings']")
     public WebElement userBox;
@@ -32,11 +32,17 @@ public class LoginPage {
 
     public void goTo(){Driver.getDriver().navigate().to(ConfigReader.read("url"));}
 
-    public void login(String username, String Password){
-        userName.sendKeys(username);
-        password.sendKeys(Password);
+    public void login() {
+        usernameBox.sendKeys(ConfigReader.read("user1"));
+        passwordBox.sendKeys(ConfigReader.read("password"));
         loginButton.click();
     }
 
+    public void login(String username, String password) {
+
+        usernameBox.sendKeys(username);
+        passwordBox.sendKeys(password);
+        loginButton.click();
+    }
 
 }
