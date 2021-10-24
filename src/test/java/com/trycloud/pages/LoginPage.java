@@ -25,8 +25,6 @@ public class LoginPage {
     @FindBy(xpath = "//li[normalize-space(.) ='Log out']")
     public WebElement logoutBox;
 
-
-
     public LoginPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
