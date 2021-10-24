@@ -10,22 +10,15 @@ import org.junit.Assert;
 
 public class us12 {
     ContactsModulePage contactsModulePage = new ContactsModulePage();
-
-
     int sizeBeforeAddNewContact;
 
 
     @When("click “Contacts” module")
     public void click_contacts_module() {
-
         contactsModulePage.contactsModule.click();
-
         String text = contactsModulePage.numOfContacts.getText();
         Integer a = Integer.parseInt(text);
-        sizeBeforeAddNewContact=a;
-
-
-
+        sizeBeforeAddNewContact = a;
 
     }
 
@@ -34,27 +27,20 @@ public class us12 {
         String title = Driver.getDriver().getTitle();
         Assert.assertEquals("Contacts - Trycloud", title);
 
-
     }
 
     @When("click “New Contact” button")
     public void click_new_contact_button() {
-
         contactsModulePage.newContactBtn.click();
         BrowserUtil.waitFor(4);
-
-
 
     }
 
     @When("fill out the contact info like : Title, Phone, email, address , etc")
     public void fill_out_the_contact_info_like_title_phone_email_address_etc() {
         contactsModulePage.fullNameBtn.clear();
-
         contactsModulePage.fillOutContactInfo();
         BrowserUtil.waitFor(2);
-
-
 
     }
 
@@ -68,7 +54,6 @@ public class us12 {
         System.out.println("sizeAfterAddNewContact = " + sizeAfterAddNewContact);
 
         Assert.assertTrue(sizeBeforeAddNewContact == sizeAfterAddNewContact - 1);
-
 
     }
 

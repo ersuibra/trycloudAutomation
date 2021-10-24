@@ -29,7 +29,6 @@ public class us10 {
     @When("check the current storage usage")
     public void check_the_current_storage_usage() {
         String storageBefore = filesPage.storageUsage.getText();
-
         storageBefore = storageBefore.substring(0, (storageBefore.indexOf(" ")));
 
         System.out.println("storageBefore = " + storageBefore);
@@ -45,9 +44,7 @@ public class us10 {
 
     @Then("verify the storage usage is increased")
     public void verify_the_storage_usage_is_increased() {
-
         String storageCurrent = filesPage.storageUsage.getText();
-
         storageCurrent = storageCurrent.substring(0, (storageCurrent.indexOf(" ")));
 
         Assert.assertTrue(Double.parseDouble(storageCurrent) > Double.parseDouble(passStorage));

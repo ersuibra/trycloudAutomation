@@ -13,6 +13,7 @@ public class us9 {
     DashboardPage dashboardPage = new DashboardPage();
     FilesPage filesPage = new FilesPage();
     Faker faker = new Faker();
+
     @When("click details")
     public void click_details() {
         BrowserUtil.checkVisibilityOfElement(By.xpath("//div/ul/li[4]/a[@data-action='Details' ]"), 5);
@@ -23,10 +24,7 @@ public class us9 {
     @When("write a comment inside to the input box")
     public void write_a_comment_inside_to_the_input_box() {
         filesPage.commentTab.click();
-        filesPage.commentMessage.sendKeys("a"+faker.chuckNorris().fact());
-
-
-
+        filesPage.commentMessage.sendKeys("a" + faker.chuckNorris().fact());
         //li/a[@id='commentsTabView']
         //div[@id='commentsTabView']/div/form/div[@class='message']
 

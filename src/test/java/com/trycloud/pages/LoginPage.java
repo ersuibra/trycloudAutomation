@@ -25,12 +25,14 @@ public class LoginPage {
     @FindBy(xpath = "//li[normalize-space(.) ='Log out']")
     public WebElement logoutBox;
 
-    public LoginPage(){
+    public LoginPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
 
-    public void goTo(){Driver.getDriver().navigate().to(ConfigReader.read("url"));}
+    public void goTo() {
+        Driver.getDriver().navigate().to(ConfigReader.read("url"));
+    }
 
     public void login() {
         usernameBox.sendKeys(ConfigReader.read("user1"));

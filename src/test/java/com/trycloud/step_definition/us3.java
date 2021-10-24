@@ -9,6 +9,7 @@ import com.trycloud.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,9 +26,8 @@ public class us3 {
         System.out.println("currentTitle = " + currentTitle);
         String expectedTitle = "Files - Trycloud";
         System.out.println("expectedTitle = " + expectedTitle);
-      
-        Assert.assertEquals(expectedTitle, currentTitle);
 
+        Assert.assertEquals(expectedTitle, currentTitle);
     }
 
     @When("user click the top left checkbox of the table")
@@ -35,7 +35,6 @@ public class us3 {
         filesModule.files.click();
         BrowserUtil.waitFor(1);
         filesModule.topLeftCheckBox.click();
-
     }
 
     @Then("assert all the files are selected")
