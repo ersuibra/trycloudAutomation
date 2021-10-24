@@ -1,5 +1,6 @@
 package com.trycloud.pages;
 
+import com.trycloud.utilities.ConfigReader;
 import com.trycloud.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -26,6 +27,15 @@ public class LoginPage {
 
     public LoginPage(){
         PageFactory.initElements(Driver.getDriver(), this);
+    }
+
+
+    public void goTo(){Driver.getDriver().navigate().to(ConfigReader.read("url"));}
+
+    public void login(String username, String Password){
+        userName.sendKeys(username);
+        password.sendKeys(Password);
+        loginButton.click();
     }
 
 

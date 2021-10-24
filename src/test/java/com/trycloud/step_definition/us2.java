@@ -1,5 +1,6 @@
 package com.trycloud.step_definition;
 
+
 import com.trycloud.pages.DashboardPage;
 import com.trycloud.pages.LoginPage;
 import com.trycloud.utilities.BrowserUtil;
@@ -14,16 +15,13 @@ import org.openqa.selenium.interactions.Actions;
 
 public class us2 {
     LoginPage loginPage = new LoginPage();
-    DashboardPage dashboardPage = new DashboardPage();
+
 
     @When("login as a user")
     public void login_as_a_user() {
         loginPage.userName.sendKeys(ConfigReader.read("user1"));
         loginPage.password.sendKeys(ConfigReader.read("password"));
         loginPage.loginButton.click();
-
-
-
     }
 
     @Then("verify that user see the following modules {string}")
