@@ -42,7 +42,7 @@ public class us3 {
     public void assert_all_the_files_are_selected() {
 
         BrowserUtil.waitFor(1);
-        Assert.assertTrue(us3_page_filesModule.checkAllBoxVerify(us3_page_filesModule.allCheckBoxes));
+        Assert.assertTrue(BrowserUtil.checkAllBoxVerify(us3_page_filesModule.allCheckBoxes));
 
     }
 }
