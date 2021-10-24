@@ -21,7 +21,7 @@ public class us2_DashboardStepDef {
     @Then("Verify the user see the following modules:")
     public void verify_the_user_see_the_following_modules(List<String> expectedModules) {
 
-        List<String> actualModules = BrowserUtil.getElementsText(new DashboardPage().allModules);
+        List<String> actualModules = BrowserUtil.getElementsText(new DashboardPage().allModuleNames);
 
         Assert.assertEquals(expectedModules,actualModules );
 

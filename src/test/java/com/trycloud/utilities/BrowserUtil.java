@@ -50,6 +50,15 @@ public class BrowserUtil {
 
     }
 
+    public static List<String> getElementsText(List<WebElement> list){
+        List<String> elemTexts = new ArrayList<>();
+        for (WebElement el : list) {
+            elemTexts.add(el.getAttribute("innerHTML").trim());
+        }
+        return elemTexts;
+    }
+
+
 
     // Switches to new window by the exact title. Returns to original window if target title not found
 
