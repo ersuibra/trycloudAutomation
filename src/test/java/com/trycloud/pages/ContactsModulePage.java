@@ -27,8 +27,8 @@ public class ContactsModulePage {
     @FindBy(xpath = "//*[@id='appmenu']/li[5]")
     public WebElement talksModule;
 
-    @FindBy(xpath = "/html/head/title")
-    public WebElement title;
+    //@FindBy(xpath = "/html/head/title")
+  //  public WebElement title;
 
     @FindBy(id = "new-contact-button")
     public WebElement newContactBtn;
@@ -38,35 +38,35 @@ public class ContactsModulePage {
     @FindBy(id = "contact-fullname")
     public WebElement fullNameBtn;
 
-    @FindBy(xpath = "//input[@class='property__value'][1]")
+    @FindBy(xpath = "(//input[@class='property__value'])[1]")
     public WebElement phoneBtn;
 
-    @FindBy(xpath = "//input[@class='property__value'][2]")
+    @FindBy(xpath = "(//input[@class='property__value'])[2]")
     public WebElement emailBtn;
 
-    @FindBy(xpath = "//input[@class='property__value'][3]")
+    @FindBy(xpath = "(//input[@class='property__value'])[2]")
     public WebElement postOfficeBtn;
 
-    @FindBy(xpath = "//input[@class='property__value'][4]")
+    @FindBy(xpath = "(//input[@class='property__value'])[4]")
     public WebElement addressBtn;
 
-    @FindBy(xpath = "//input[@class='property__value'][5]")
+    @FindBy(xpath = "(//input[@class='property__value'])[5]")
     public WebElement extendedAdsBtn;
 
-    @FindBy(xpath = "//input[@class='property__value'][6]")
+    @FindBy(xpath = "(//input[@class='property__value'])[6]")
     public WebElement postalCodeBtn;
 
-    @FindBy(xpath = "//input[@class='property__value'][7]")
+    @FindBy(xpath = "(//input[@class='property__value'])[7]")
     public WebElement cityBtn;
 
-    @FindBy(xpath = "//input[@class='property__value'][8]")
+    @FindBy(xpath = "(//input[@class='property__value'])[8]")
     public WebElement stateOrProvinceBtn;
 
-    @FindBy(xpath = "//input[@class='property__value'][9]")
+    @FindBy(xpath = "(//input[@class='property__value'])[9]")
     public WebElement countryBtn;
 
-    @FindBy(id = "#everyone")
-    public List<WebElement> allContacts;
+    @FindBy(xpath = "(//div[@class=\"app-navigation-entry__counter\"])[1]")
+    public WebElement numOfContacts;
 
 
     // useful methods/actions
@@ -88,14 +88,15 @@ public class ContactsModulePage {
         Faker faker = new Faker();
 
         fullNameBtn.sendKeys(faker.name().fullName());
-        emailBtn.sendKeys(faker.name().firstName().concat("@").concat("gmail.com"));
+        phoneBtn.sendKeys(faker.numerify("###-###-####"));
+       // emailBtn.sendKeys(faker.name().firstName().concat("@").concat("gmail.com"));
         postOfficeBtn.sendKeys(faker.numerify("#####-###"));
         addressBtn.sendKeys(faker.address().streetAddress());
         extendedAdsBtn.sendKeys(faker.address().fullAddress());
         postalCodeBtn.sendKeys(faker.address().zipCode());
         cityBtn.sendKeys(faker.address().cityName());
         stateOrProvinceBtn.sendKeys(faker.address().state());
-        countryBtn.sendKeys(faker.country().name());
+        //countryBtn.sendKeys(faker.country().name());
         System.out.println("Contact information form is filled");
 
     }
