@@ -16,6 +16,24 @@ public class FilesPage {
     @FindBy(xpath = "(//a[@class='action action-menu permanent'])[1]")
     public WebElement actionIcon;
 
+//todo:
+    @FindBy(xpath = "//span[.='Remove from favorites']")
+    public WebElement removeFromFavorites;
+    //todo:
+    @FindBy(xpath = "//span[.='Add to favorites']")
+    public WebElement addToFavorites;
+
+//todo:
+@FindBy(xpath = "//td[@class=\"filename\"]")
+public List<WebElement> favoritePageList;
+
+
+
+
+
+
+
+
     @FindBy(xpath = "//span[@class='innernametext']")
     public List<WebElement> itemNames;
 
@@ -51,9 +69,9 @@ public class FilesPage {
         }
         for (int i = 0; i < allFaves.size(); i++) {
             actionIcon.click();
+            removeFromFavorites.click();
             BrowserUtil.waitFor(1);
-            DashboardPage dashboardPage = new DashboardPage();
-            dashboardPage.moveToAndClickElement("//a[@data-action='Favorite']");
+
         }
     }
 

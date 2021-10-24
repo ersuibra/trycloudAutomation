@@ -22,6 +22,8 @@ public class us2 {
         loginPage.password.sendKeys(ConfigReader.read("password"));
         loginPage.loginButton.click();
 
+
+
     }
 
     @Then("verify that user see the following modules {string}")
