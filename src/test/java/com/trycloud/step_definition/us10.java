@@ -1,7 +1,6 @@
 package com.trycloud.step_definition;
 
 import com.trycloud.pages.FilesPage;
-import com.trycloud.utilities.BrowserUtil;
 import com.trycloud.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -10,7 +9,8 @@ import org.openqa.selenium.WebElement;
 
 public class us10 {
     FilesPage filesPage = new FilesPage();
-    String storage = filesPage.storageUsage.getText();
+    String passStorage;
+
     @When("click Settings on the left bottom corner")
     public void click_settings_on_the_left_bottom_corner() {
         filesPage.settingsButton.click();
@@ -28,8 +28,13 @@ public class us10 {
 
     @When("check the current storage usage")
     public void check_the_current_storage_usage() {
-        storage= storage.substring(0,(storage.indexOf(" ")));
-        System.out.println("Current storage = " + storage);
+        String storageBefore = filesPage.storageUsage.getText();
+
+        storageBefore = storageBefore.substring(0, (storageBefore.indexOf(" ")));
+
+        System.out.println("storageBefore = " + storageBefore);
+        passStorage = storageBefore;
+
     }
 
     @When("refresh the page")
@@ -40,11 +45,12 @@ public class us10 {
 
     @Then("verify the storage usage is increased")
     public void verify_the_storage_usage_is_increased() {
-        String beforeUpload = storage;
-        BrowserUtil.waitFor(10);
-        String afterUpload = storage;
 
-        Assert.assertTrue(Integer.parseInt(beforeUpload)!=Integer.parseInt(afterUpload));
+        String storageCurrent = filesPage.storageUsage.getText();
+
+        storageCurrent = storageCurrent.substring(0, (storageCurrent.indexOf(" ")));
+
+        Assert.assertTrue(Double.parseDouble(storageCurrent) > Double.parseDouble(passStorage));
 
     }
 
