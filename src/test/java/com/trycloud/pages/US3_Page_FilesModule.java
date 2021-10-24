@@ -19,7 +19,7 @@ public class US3_Page_FilesModule {
 
 
 
-    @FindBy(css = "#headerSelection > label")     //   id = "select_all_files"
+    @FindBy(css = "#headerSelection > label")     //   id = "select_all_files"   //
     public WebElement topLeftCheckBox;
 
 
