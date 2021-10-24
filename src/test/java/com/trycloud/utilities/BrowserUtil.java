@@ -133,7 +133,7 @@ public class BrowserUtil {
         return flag;
     }
     
-    public static boolean isAllSelected(List<WebElement> allFiles){
+    public static boolean checkAllBoxVerify(List<WebElement> allFiles){
 
         for (WebElement file : allFiles) {
 
