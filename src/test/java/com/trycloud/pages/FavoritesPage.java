@@ -61,27 +61,26 @@ public class FavoritesPage {
     //Assert.assertTrue(sizeOfFavListBeforeRemove()-1,sizeOfFavListAfterRemove() )
 
 
-    public void login(String user,String pass){
+    LoginPage loginPage = new LoginPage();
 
-        LoginPage loginPage=new LoginPage();
+    public void login(String user, String pass) {
 
 
-        loginPage.userName.sendKeys(user);
-        loginPage.password.sendKeys(pass);
+        loginPage.usernameBox.sendKeys(user);
+        loginPage.passwordBox.sendKeys(pass);
         loginPage.loginButton.click();
 
     }
+
     public void getModule(String moduleName) {
         Actions actions = new Actions(Driver.getDriver());
-        String element = "//li[@tabindex]/a//span[normalize-space(.)='"+moduleName+"']";
+        String element = "//li[@tabindex]/a//span[normalize-space(.)='" + moduleName + "']";
         actions.moveToElement(Driver.getDriver().findElement(By.xpath(element))).click().perform();
     }
 
-
-
     public void clickToModule(String moduleName) {
 
-        Driver.getDriver().findElement(By.xpath("//ul[@id='appmenu']//span[normalize-space(.)='"+moduleName+"']/..")).click();
+        Driver.getDriver().findElement(By.xpath("//ul[@id='appmenu']//span[normalize-space(.)='" + moduleName + "']/..")).click();
     }
 
 
