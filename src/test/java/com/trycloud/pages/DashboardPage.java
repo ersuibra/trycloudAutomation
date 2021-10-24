@@ -10,8 +10,8 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public class DashboardPage {
-    @FindBy(xpath = "(//li[@tabindex]/a/span)")
-    public List<WebElement> allModuleNames;
+    @FindBy(xpath = "//ul[@id='appmenu']//span")
+    public List<WebElement> allModules;
 
     public DashboardPage(){
         PageFactory.initElements(Driver.getDriver(), this);
@@ -26,6 +26,11 @@ public class DashboardPage {
     public void moveToAndClickElement(String xPathName) {
         Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(Driver.getDriver().findElement(By.xpath(xPathName))).click().perform();
+    }
+    
+    public void navigateToModule(String moduleName){
+
+        Driver.getDriver().findElement(By.xpath("//ul[@id='appmenu']//span[normalize-space(.)='"+moduleName+"']/..")).click();
     }
 
 
