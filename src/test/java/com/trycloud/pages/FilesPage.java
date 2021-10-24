@@ -58,13 +58,41 @@ public List<WebElement> favoritePageList;
     @FindBy(xpath = "//tr/td[@class='selection']/input")
     public List<WebElement> allCheckboxes;
 
+    //Comment element for files
+    @FindBy(xpath = "//li/a[@id='commentsTabView']")
+    public WebElement commentTab;
+
+    //Comment message area
+    @FindBy(xpath = "//div[@id='commentsTabView']/div/form/div[@class='message']")
+    public WebElement commentMessage;
+
+    //comment submit button
+    @FindBy(xpath = "//div[@id='commentsTabView']/div/form/input[@type='submit']")
+    public WebElement commentSubmit;
+
+    //comment message check
+    @FindBy(xpath = "//div/ul/li/div[@class='message']")
+    public WebElement commentArea;
+
+    //settings button locator on files module
+    @FindBy(css = ".settings-button")
+    public WebElement settingsButton;
+
+    //check box elements
+    @FindBy(xpath = "//div[@id='app-settings-content']//label[contains(.,'Show')]")
+    public List<WebElement> checkBoxes;
+
+    //storage WebElement
+    @FindBy(id = "quota")
+    public WebElement storageUsage;
+
 
     public FilesPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
     public void removeFaves() {
-        if (allFaves.size() ==0){
+        if (allFaves.size() == 0) {
             return;
         }
         for (int i = 0; i < allFaves.size(); i++) {
