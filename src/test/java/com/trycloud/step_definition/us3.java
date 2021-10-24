@@ -43,6 +43,7 @@ public class us3 {
 
         BrowserUtil.waitFor(1);
         Assert.assertTrue(BrowserUtil.checkAllBoxVerify(us3_page_filesModule.allCheckBoxes));
+        ///
 
     }
 }
