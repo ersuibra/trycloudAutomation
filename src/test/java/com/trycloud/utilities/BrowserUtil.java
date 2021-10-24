@@ -132,5 +132,16 @@ public class BrowserUtil {
 
         return flag;
     }
+    
+    public static boolean isAllSelected(List<WebElement> allFiles){
+
+        for (WebElement file : allFiles) {
+
+            if(!file.isSelected()){
+                return false;
+            }
+        }
+        return true;
+    }
 
 }
