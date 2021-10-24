@@ -2,6 +2,8 @@ package com.trycloud.pages;
 
 
 import com.github.javafaker.Faker;
+
+import com.trycloud.utilities.BrowserUtil;
 import com.trycloud.utilities.Driver;
 import org.openqa.selenium.WebElement;
 
@@ -14,11 +16,13 @@ import java.util.List;
 
 public class UploadFilePage {
 
+
     //instance variables
     @FindBy(css = ".button.new")
     public WebElement addIcon;
+    //public String pathName="/Users/adnanyildiz/IdeaProjects/trycloudAutomation/src/test/resources/files/us_01.png";
 
-    public String pathName="/Users/adnanyildiz/IdeaProjects/trycloudAutomation/src/test/resources/files/us_01.png";
+    public String pathName="C:\\Users\\Canada\\Desktop\\Mevlam neyler neylerse guzel eyler\\HTML Projects\\trycloudAutomation\\src\\test\\resources\\files\\us_0"+BrowserUtil.randomNumber(1,9)+".png";
 
 
     @FindBy(xpath = "//input[@type='file']")
