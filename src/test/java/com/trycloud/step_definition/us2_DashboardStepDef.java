@@ -8,6 +8,8 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
+import java.util.List;
+
 public class us2_DashboardStepDef {
     LoginPage loginPage = new LoginPage();
     DashboardPage dashboardPage = new DashboardPage();
