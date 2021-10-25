@@ -101,6 +101,7 @@ public class BrowserUtil {
         return new Faker().number().numberBetween(a, b);
     }
 
+
     //checks if all elements are checked
     public static boolean getIsCheck(List<WebElement> allCheckboxes) {
         boolean flag = true;

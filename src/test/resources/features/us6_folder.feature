@@ -1,4 +1,4 @@
-@ui @us6
+@us6
 Feature: As a user, I should be able to access to Files module.
 
   Background:
@@ -19,5 +19,6 @@ Feature: As a user, I should be able to access to Files module.
     And click “upload file"
     And upload a file
     Then verify the file is displayed on the page
+
 
 
