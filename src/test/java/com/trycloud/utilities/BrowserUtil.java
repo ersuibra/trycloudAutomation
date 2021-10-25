@@ -1,5 +1,6 @@
 package com.trycloud.utilities;
 
+import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
@@ -41,5 +42,9 @@ public class BrowserUtil {
 
         return  allTextLst ;
 
+    }
+
+    public static int randomNumber(int a, int b) {
+        return new Faker().number().numberBetween(a, b);
     }
 }
