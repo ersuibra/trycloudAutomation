@@ -16,23 +16,14 @@ public class FilesPage {
     @FindBy(xpath = "(//a[@class='action action-menu permanent'])[1]")
     public WebElement actionIcon;
 
-//todo:
     @FindBy(xpath = "//span[.='Remove from favorites']")
     public WebElement removeFromFavorites;
-    //todo:
+
     @FindBy(xpath = "//span[.='Add to favorites']")
     public WebElement addToFavorites;
 
-//todo:
-@FindBy(xpath = "//td[@class=\"filename\"]")
-public List<WebElement> favoritePageList;
-
-
-
-
-
-
-
+    @FindBy(xpath = "//td[@class=\"filename\"]")
+    public List<WebElement> favoritePageList;
 
     @FindBy(xpath = "//span[@class='innernametext']")
     public List<WebElement> itemNames;

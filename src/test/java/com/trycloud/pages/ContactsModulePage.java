@@ -13,14 +13,7 @@ import java.util.List;
 
 public class ContactsModulePage {
 
-    // constructor
-
-    public ContactsModulePage(){
-        PageFactory.initElements(Driver.getDriver(), this);
-    }
-
     //instances variables
-
     @FindBy(xpath = "//*[@id='appmenu']/li[6]")
     public WebElement contactsModule;
 
@@ -28,11 +21,9 @@ public class ContactsModulePage {
     public WebElement talksModule;
 
     //@FindBy(xpath = "/html/head/title")
-  //  public WebElement title;
-
+    //  public WebElement title;
     @FindBy(id = "new-contact-button")
     public WebElement newContactBtn;
-
 
     // fill out the form
     @FindBy(id = "contact-fullname")
@@ -68,12 +59,15 @@ public class ContactsModulePage {
     @FindBy(xpath = "(//div[@class=\"app-navigation-entry__counter\"])[1]")
     public WebElement numOfContacts;
 
+    // constructor
+    public ContactsModulePage() {
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
 
     // useful methods/actions
-
     public void getModule(String moduleName) {
         Actions actions = new Actions(Driver.getDriver());
-        String element = "//li[@tabindex]/a//span[normalize-space(.)='"+moduleName+"']";
+        String element = "//li[@tabindex]/a//span[normalize-space(.)='" + moduleName + "']";
         actions.moveToElement(Driver.getDriver().findElement(By.xpath(element))).click().perform();
     }
 
@@ -83,13 +77,12 @@ public class ContactsModulePage {
         actions.moveToElement(Driver.getDriver().findElement(By.xpath(element))).click().perform();
     }
 
-
-    public void fillOutContactInfo(){
+    public void fillOutContactInfo() {
         Faker faker = new Faker();
 
         fullNameBtn.sendKeys(faker.name().fullName());
         phoneBtn.sendKeys(faker.numerify("###-###-####"));
-       // emailBtn.sendKeys(faker.name().firstName().concat("@").concat("gmail.com"));
+        // emailBtn.sendKeys(faker.name().firstName().concat("@").concat("gmail.com"));
         postOfficeBtn.sendKeys(faker.numerify("#####-###"));
         addressBtn.sendKeys(faker.address().streetAddress());
         extendedAdsBtn.sendKeys(faker.address().fullAddress());
@@ -100,7 +93,6 @@ public class ContactsModulePage {
         System.out.println("Contact information form is filled");
 
     }
-
 
     // create list of elements for each before/after adding the new contact into the list
     // assert that after adding a new contact the size.List()+1; is increased by one.

@@ -15,7 +15,6 @@ public class us1_LoginStepDefs {
     @Given("user on the login page")
     public void user_on_the_login_page() {
         Driver.getDriver().get(ConfigReader.read("url"));
-
     }
 
     @When("user enter valid {string} and {string}")

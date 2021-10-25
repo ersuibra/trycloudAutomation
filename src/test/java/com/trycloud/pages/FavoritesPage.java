@@ -15,16 +15,11 @@ import java.util.List;
 public class FavoritesPage {
 
     //instance variables
-
-
     @FindBy(xpath = "(//span[normalize-space(.)='Files'])[1]")
     public WebElement filesModule;
 
     @FindBy(xpath = "//a[.='Favorites']")
     public WebElement favoritesTab;
-
-
-
 
     @FindBy(xpath = "//td[@class=\"filename\"]")
     public List<WebElement> favoritesFiles;
@@ -34,7 +29,6 @@ public class FavoritesPage {
 
     @FindBy(xpath = "//span[.='Remove from favorites']")
     public WebElement removeFromFavoritesBtn;
-
 
     //constructor
     public FavoritesPage() {
@@ -46,26 +40,19 @@ public class FavoritesPage {
     //logic I created list of Web Elemnt for the Favorites list,
     //to assert 1 file is removed i will use list.size-1
 
-
     public int sizeOfFavListBeforeRemove() {
-
         return favoritesFiles.size();
 
     }
 
     public int sizeOfFavListAfterRemove() {
-
         return favoritesFiles.size() - 1;
 
     }
     //Assert.assertTrue(sizeOfFavListBeforeRemove()-1,sizeOfFavListAfterRemove() )
 
-
-    LoginPage loginPage = new LoginPage();
-
     public void login(String user, String pass) {
-
-
+        LoginPage loginPage = new LoginPage();
         loginPage.usernameBox.sendKeys(user);
         loginPage.passwordBox.sendKeys(pass);
         loginPage.loginButton.click();

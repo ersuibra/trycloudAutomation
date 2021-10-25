@@ -49,8 +49,8 @@ public class BrowserUtil {
         return allTextLst;
 
     }
-    
-    public static List<String> getElementsText(List<WebElement> list){
+
+    public static List<String> getElementsText(List<WebElement> list) {
         List<String> elemTexts = new ArrayList<>();
         for (WebElement el : list) {
             elemTexts.add(el.getAttribute("innerHTML").trim());
@@ -124,14 +124,12 @@ public class BrowserUtil {
 
             str = Driver.getDriver().getCurrentUrl();
 
-
             for (WebElement checkbox : allCheckboxes) {
                 if (!checkbox.isSelected()) {
                     flag = false;
                     break;
                 }
             }
-
 
             nextButton.click();
             BrowserUtil.waitFor(2);
@@ -140,12 +138,12 @@ public class BrowserUtil {
 
         return flag;
     }
-    
-    public static boolean checkAllBoxVerify(List<WebElement> allFiles){
+
+    public static boolean checkAllBoxVerify(List<WebElement> allFiles) {
 
         for (WebElement file : allFiles) {
 
-            if(!file.isSelected()){
+            if (!file.isSelected()) {
                 return false;
             }
         }

@@ -23,6 +23,5 @@ public class us2_DashboardStepDef {
     public void verify_that_user_see_the_following_modules(List<String> expectedModules) {
         List<String> actualModules = BrowserUtil.getElementsText(dashboardPage.allModules);
         Assert.assertEquals(expectedModules,actualModules );
-
     }
 }
