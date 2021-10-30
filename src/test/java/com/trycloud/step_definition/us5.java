@@ -36,6 +36,7 @@ public class us5 {
             removeFav.removeFromFavoritesBtn.click();
         }
 
+
     }
 
     @Then("verify that the file is removed from Favorites sub-module’s table.")
