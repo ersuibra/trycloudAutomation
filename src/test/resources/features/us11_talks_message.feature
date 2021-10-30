@@ -4,7 +4,7 @@ Feature: As a user, I should be able to access to Talks module.
   Background:
     Given user on the login page
     And login as a user
-    When click Talks module
+    When click Talk module
 
   Scenario: verify users can access to Talks module
     Then verify the page tile is Talks module’s tile

@@ -30,8 +30,16 @@ public class TalkPage {
     @FindBy(xpath = "//div[@role='textbox']")
     public WebElement messageBox;
 
-    @FindBy(xpath = "(//span[contains(.,'Today')]/../..//div[@class='message__main__text'])")
+    @FindBy(xpath = "(//span[contains(.,\"Today\")]/../..//div[@class='message__main__text'])")
     public List<WebElement> allMessages;
+
+    @FindBy(xpath = "//*[@id='message_3427']/div/div[1]/div")
+    public WebElement messageDisplay;
+
+    public void navigateToModule(String moduleName){
+
+        Driver.getDriver().findElement(By.xpath("//ul[@id='appmenu']//span[normalize-space(.)='"+moduleName+"']/..")).click();
+    }
 
     public String checkMessage(int allMessages) {
         BrowserUtil.waitFor(3);
