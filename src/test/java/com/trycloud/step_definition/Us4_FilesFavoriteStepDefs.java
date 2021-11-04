@@ -9,7 +9,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class us4 {
+public class Us4_FilesFavoriteStepDefs {
     DashboardPage dashboardPage = new DashboardPage();
     FilesPage filesPage = new FilesPage();
     String nameOfFile;
@@ -19,7 +19,6 @@ public class us4 {
         dashboardPage.getModule("Files");
         filesPage.removeFaves();
         Driver.getDriver().navigate().refresh();
-        //filesPage.actionIcon.click();
         int randomNumber = BrowserUtil.randomNumber(1, filesPage.itemNames.size());
         nameOfFile = Driver.getDriver().findElement(By.xpath("(//span[@class='innernametext'])[" + randomNumber + "]")).getText();
         Driver.getDriver().findElement(By.xpath("(//a[@class='action action-menu permanent'])[" + randomNumber + "]")).click();
@@ -29,8 +28,6 @@ public class us4 {
     @When("choose “Add to Favorites” option")
     public void choose_add_to_favorites_option() {
         filesPage.addToFavorites.click();
-        // BrowserUtil.checkVisibilityOfElement(By.xpath("//a[@data-action='Favorite']"), 5);
-        // dashboardPage.moveToAndClickElement("//a[@data-action='Favorite']");
     }
 
     @When("click “Favorites” sub-module on the lest side")
@@ -41,9 +38,6 @@ public class us4 {
 
     @Then("verify the chosen file is listed on the table")
     public void verify_the_chosen_file_is_listed_on_the_table() {
-        //Assert.assertEquals(1, filesPage.favoritePageList.size());
-        //   System.out.println(nameOfFile);
-        // System.out.println("Driver.getDriver().findElement(By.xpath(\"//td[1]//span[@class='innernametext']\")).getText() = " + Driver.getDriver().findElement(By.xpath("//td[1]//span[@class='innernametext']")).getText());
         Assert.assertEquals(nameOfFile, Driver.getDriver().findElement(By.xpath("//td[1]//span[@class='innernametext']")).getText());
     }
 

@@ -1,19 +1,13 @@
 package com.trycloud.step_definition;
 
-import com.trycloud.pages.LoginPage;
 import com.trycloud.pages.FilesModulePage;
-import com.trycloud.pages.DashboardPage;
-import com.trycloud.pages.FilesPage;
 import com.trycloud.utilities.BrowserUtil;
 import com.trycloud.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class us3 {
+public class Us3_FilesAccessStepDefs {
 
     FilesModulePage filesModule = new FilesModulePage();
 

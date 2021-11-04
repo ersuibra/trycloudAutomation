@@ -10,7 +10,7 @@ import org.junit.Assert;
 
 import java.util.List;
 
-public class us2_DashboardStepDef {
+public class Us2_DashboardStepDefs {
     LoginPage loginPage = new LoginPage();
     DashboardPage dashboardPage = new DashboardPage();
 

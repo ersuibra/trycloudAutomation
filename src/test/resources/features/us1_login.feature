@@ -1,4 +1,4 @@
-@ui @us1
+@us1
 Feature: As a user, I should be able to login to TryCloud app
 
   Background:

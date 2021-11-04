@@ -7,7 +7,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 
-public class us10 {
+public class Us10_AppSettingsStepDefs {
     FilesPage filesPage = new FilesPage();
     String passStorage;
 

@@ -3,7 +3,7 @@ package com.trycloud.step_definition;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class us14 {
+public class Us14_HompageSearchStepDefs {
     @When("click magnifier icon on the right top")
     public void click_magnifier_icon_on_the_right_top() {
 

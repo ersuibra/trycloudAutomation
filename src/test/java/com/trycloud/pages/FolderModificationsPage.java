@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class US6Page {
+public class FolderModificationsPage {
     //@FindBy(xpath = "//input[@id='user']")
     @FindBy(xpath = "(//li[@data-id=\"files\"])[1]")
     public WebElement FilesMod;
@@ -39,7 +39,7 @@ public class US6Page {
     @FindBy(xpath = "(//span[@class='innernametext'])[1]")
     public WebElement VerifyUpload;
 
-    public US6Page(){
+    public FolderModificationsPage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
 }

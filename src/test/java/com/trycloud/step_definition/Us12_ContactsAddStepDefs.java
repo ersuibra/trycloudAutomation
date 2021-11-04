@@ -8,7 +8,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 
-public class us12 {
+public class Us12_ContactsAddStepDefs {
     ContactsModulePage contactsModulePage = new ContactsModulePage();
     int sizeBeforeAddNewContact;
 
