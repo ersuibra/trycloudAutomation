@@ -1,20 +1,15 @@
 package com.trycloud.step_definition;
 
-import com.github.javafaker.Faker;
 import com.trycloud.pages.DashboardPage;
-import com.trycloud.pages.LoginPage;
 import com.trycloud.pages.FavoritesPage;
 import com.trycloud.pages.UploadFilePage;
 import com.trycloud.utilities.BrowserUtil;
-import com.trycloud.utilities.ConfigReader;
 import com.trycloud.utilities.Driver;
-import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.interactions.Actions;
 
-public class us5 {
+public class Us5_FilesRemoveStepDefs {
 
     int totalFilesAndFolders;
     UploadFilePage upload = new UploadFilePage();

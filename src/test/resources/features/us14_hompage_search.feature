@@ -1,4 +1,4 @@
-@ui @us14
+@us14
 Feature: As a user, I should be able to access search any item/ users from the homepage.
 
 

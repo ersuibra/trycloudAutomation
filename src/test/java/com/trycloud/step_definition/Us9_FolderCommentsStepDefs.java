@@ -9,7 +9,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 
-public class us9 {
+public class Us9_FolderCommentsStepDefs {
     DashboardPage dashboardPage = new DashboardPage();
     FilesPage filesPage = new FilesPage();
     Faker faker = new Faker();

@@ -5,11 +5,9 @@ import com.trycloud.utilities.BrowserUtil;
 import com.trycloud.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
-
 import static org.junit.Assert.assertEquals;
 
-public class us11 {
+public class Us11_TalksMessageStepDefs {
     TalkPage talkPage = new TalkPage();
 
     @When("click Talk module")
